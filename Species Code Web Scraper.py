@@ -4,14 +4,13 @@ import ssl
 import urllib.request
 
 #Disabled SSL certification, as there was difficulty accessing the URL via MacOS.
-#Look to update with a more secure solution.
 context = ssl._create_unverified_context()
 
 url = "https://www.ncbi.nlm.nih.gov/nucleotide"
 response = urllib.request.urlopen(url, context=context)
 
 def search_genbank(species_code):
-    Entrez.email = 'mrose3@conncoll.edu' #Update with user's email
+    Entrez.email = 'EMAIL' #Update with user's email
     handle = Entrez.efetch(db = 'nucleotide', id = species_code, retmode = 'xml') #db specifies the database of interest. Any database should work with this script.
     record = Entrez.read(handle)
     handle.close()
