@@ -6,7 +6,7 @@ def calc_corr(data_file):
 
 if __name__ == "__main__":
     pd.set_option('display.max_columns', None)
-    data_file = '/Users/madelynrose/Desktop/FreqUPDATED.csv'
+    data_file = 'FILE PATH'
     try:
         corr_matrix = calc_corr(data_file)
         print ("Correlation Matrix:")
